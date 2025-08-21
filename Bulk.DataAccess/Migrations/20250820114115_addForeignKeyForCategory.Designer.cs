@@ -2,6 +2,7 @@
 using Bulk.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Bulk.DataAccess.Migrations
 {
     [DbContext(typeof(BulkDbContext))]
-    partial class BulkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250820114115_addForeignKeyForCategory")]
+    partial class addForeignKeyForCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,10 +118,6 @@ namespace Bulk.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("double precision");
 
@@ -149,7 +148,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "A comprehensive guide to writing clean, readable, and maintainable code. Essential reading for software developers who want to improve their craft.",
                             ISBN = "978-0132350884",
-                            ImageUrl = "",
                             ListPrice = 45.990000000000002,
                             Price = 42.990000000000002,
                             Price100 = 38.990000000000002,
@@ -163,7 +161,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "The classic book on design patterns that every software developer should read. Learn the 23 Gang of Four patterns.",
                             ISBN = "978-0201633610",
-                            ImageUrl = "",
                             ListPrice = 54.990000000000002,
                             Price = 51.990000000000002,
                             Price100 = 47.990000000000002,
@@ -177,7 +174,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "From journeyman to master - this book will help you become a better programmer through practical advice and techniques.",
                             ISBN = "978-0135957059",
-                            ImageUrl = "",
                             ListPrice = 49.990000000000002,
                             Price = 46.990000000000002,
                             Price100 = 42.990000000000002,
@@ -191,7 +187,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "How today's entrepreneurs use continuous innovation to create radically successful businesses.",
                             ISBN = "978-0307887894",
-                            ImageUrl = "",
                             ListPrice = 28.989999999999998,
                             Price = 26.989999999999998,
                             Price100 = 22.989999999999998,
@@ -205,7 +200,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Transform your life with tiny changes in behavior. Learn how small habits can make a big difference.",
                             ISBN = "978-0735211292",
-                            ImageUrl = "",
                             ListPrice = 27.989999999999998,
                             Price = 25.989999999999998,
                             Price100 = 21.989999999999998,
@@ -219,7 +213,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 3,
                             Description = "Harper Lee's timeless classic about courage, morality, and growing up in the American South.",
                             ISBN = "978-0060935467",
-                            ImageUrl = "",
                             ListPrice = 15.99,
                             Price = 14.99,
                             Price100 = 12.99,
@@ -233,7 +226,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 3,
                             Description = "George Orwell's dystopian masterpiece about totalitarianism and the power of language.",
                             ISBN = "978-0451524935",
-                            ImageUrl = "",
                             ListPrice = 13.99,
                             Price = 12.99,
                             Price100 = 10.99,
@@ -247,7 +239,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 6,
                             Description = "Jane Austen's beloved romance about Elizabeth Bennet and Mr. Darcy in Regency England.",
                             ISBN = "978-0141439518",
-                            ImageUrl = "",
                             ListPrice = 12.99,
                             Price = 11.99,
                             Price100 = 9.9900000000000002,
@@ -261,7 +252,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 4,
                             Description = "Frank Herbert's epic science fiction novel set on the desert planet Arrakis. A masterpiece of world-building.",
                             ISBN = "978-0441172719",
-                            ImageUrl = "",
                             ListPrice = 18.989999999999998,
                             Price = 17.989999999999998,
                             Price100 = 15.99,
@@ -275,7 +265,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 4,
                             Description = "The first volume of J.R.R. Tolkien's epic fantasy trilogy that defined the genre.",
                             ISBN = "978-0547928210",
-                            ImageUrl = "",
                             ListPrice = 16.989999999999998,
                             Price = 15.99,
                             Price100 = 13.99,
@@ -289,7 +278,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 5,
                             Description = "Yuval Noah Harari explores the journey of our species from the Stone Age to the Silicon Age.",
                             ISBN = "978-0062316097",
-                            ImageUrl = "",
                             ListPrice = 24.989999999999998,
                             Price = 22.989999999999998,
                             Price100 = 18.989999999999998,
@@ -303,7 +291,6 @@ namespace Bulk.DataAccess.Migrations
                             CategoryId = 5,
                             Description = "Tara Westover's powerful memoir about education, family, and the struggle between loyalty and independence.",
                             ISBN = "978-0399590504",
-                            ImageUrl = "",
                             ListPrice = 26.989999999999998,
                             Price = 24.989999999999998,
                             Price100 = 20.989999999999998,
