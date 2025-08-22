@@ -17,6 +17,17 @@ public class ProductRepository : Repository<Product>, IProduct
     
     public void Update(Product product)
     {
+        // Detach any existing tracked entity with the same Id to avoid conflicts
+        var existingEntry = _context.Entry(product);
+        if (existingEntry.State == Microsoft.EntityFrameworkCore.EntityState.Detached)
+        {
+            var trackedEntity = _context.Products.Local.FirstOrDefault(p => p.Id == product.Id);
+            if (trackedEntity != null)
+            {
+                _context.Entry(trackedEntity).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+            }
+        }
+        
         _context.Products.Update(product);
     }
 }

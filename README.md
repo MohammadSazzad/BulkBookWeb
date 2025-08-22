@@ -48,6 +48,169 @@ BulkBookWeb/
   - Shopping cart functionality (extensible)
   - User account management (planned)
 
+## 🎨 Header & Footer Design System
+
+### 📋 Three-Tier Header Architecture
+
+The application features a sophisticated three-row header design that adapts seamlessly across different screen sizes:
+
+#### **Row 1: Welcome Bar**
+- **Social Media Integration**: Facebook, LinkedIn, Instagram, YouTube icons
+- **Welcome Message**: "WELCOME TO BULKBOOK WEB - YOUR PREMIER ONLINE BOOK STORE!"
+- **Support Information**: Phone number with icon (+8801735718761)
+- **Responsive Behavior**: Hidden on small screens (≤768px) for clean mobile experience
+
+#### **Row 2: Main Header**
+- **Brand Identity**: Large BULKBOOK logo with "Web Store" tagline
+- **Advanced Search**: Full-width search bar with placeholder text
+- **User Actions**: Profile dropdown, wishlist, and shopping cart icons
+- **Responsive Behavior**: Hidden on small screens to maximize content space
+
+#### **Row 3: Sticky Navigation**
+- **Menu Integration**: Menu button icon (large screens only)
+- **Navigation Links**: Home, Category, Writer, Publication, Stationary, Campaign
+- **Admin Access**: Dropdown with Dashboard, Categories, and Products links
+- **Sticky Behavior**: Remains visible during scroll with enhanced visual effects
+
+### 🔄 Responsive Header Behavior
+
+#### **Large Screens (≥992px)**
+- Full three-row header experience
+- Menu button visible on the left
+- Complete navigation with centered links
+- All social media and contact information displayed
+
+#### **Small Screens (≤768px)**
+- **Simplified Design**: Only sticky navigation visible
+- **Logo Replacement**: BULKBOOK logo replaces menu button
+- **Search Integration**: Modal-based search accessible via icon
+- **Clean Interface**: First two header rows hidden for optimal mobile UX
+
+### 🦶 Professional Footer System
+
+#### **Two-Tier Footer Design**
+
+**Main Footer (White Background)**
+- **Company Branding**: Logo, mission statement, and social media links
+- **Quick Links**: Essential navigation (Home, Categories, Writers, Publications, Campaigns)
+- **Customer Service**: Support links (Contact, FAQ, Shipping, Returns, Track Order)
+- **Contact Information**: Phone, email, and address with intuitive icons
+
+**Bottom Footer (Dark Background)**
+- **Copyright Information**: Professional legal text
+- **Developer Credit**: Attribution with animated heart icon
+
+#### **Advanced Responsive Footer Layout**
+
+**Large Screens (≥992px)**
+```
+[ Company Info ] [ Quick Links ] [ Customer Service ] [ Contact Info ]
+[              Copyright              |        Developer Credit        ]
+```
+
+**Medium Screens (768px-991px)**
+```
+[   Company Info   ] [  Quick Links  ]
+[ Customer Service ] [ Contact Info  ]
+[    Copyright     |   Developer     ]
+```
+
+**Small Screens (≤767px)**
+```
+[        Company Info        ]
+[ Quick ] [ Service ] [ Touch ]
+[  Copyright  |  Developer   ]
+```
+
+### ⚡ Advanced Features & Interactions
+
+#### **Sticky Navigation Enhancements**
+- **Scroll Effects**: Visual feedback with backdrop blur and shadows
+- **Hover Animations**: Footer-style link effects with slide and underline
+- **Performance Optimized**: Smooth 0.3s transitions with hardware acceleration
+
+#### **Mobile-First Design**
+- **Touch-Friendly**: Optimized button sizes and spacing for mobile interaction
+- **Search Modal**: Dedicated search interface for mobile users
+- **Progressive Enhancement**: Features degrade gracefully across devices
+
+#### **Visual Design Elements**
+- **Clean Aesthetics**: Minimal shadows and subtle dividers (30% opacity HR elements)
+- **Brand Consistency**: Unified color scheme and typography
+- **Professional Spacing**: Carefully tuned padding and margins for optimal readability
+
+### 🛠️ Technical Implementation
+
+#### **CSS Architecture**
+- **Flexbox Layout**: Modern layout system for responsive design
+- **Bootstrap 5 Integration**: Utility classes with custom enhancements
+- **Custom Animations**: Keyframe animations for engaging user interactions
+- **Mobile-Specific Styles**: Dedicated media queries for optimal mobile experience
+
+#### **JavaScript Functionality**
+- **Scroll Detection**: Dynamic navigation styling based on scroll position
+- **Modal Management**: Bootstrap modal integration for mobile search
+- **Performance Monitoring**: Optimized event listeners for smooth scrolling
+
+#### **Responsive Breakpoints**
+```css
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
+```
+
+### 📁 Modified Files & Components
+
+#### **Layout & Structure**
+- **`Views/Shared/_Layout.cshtml`**: Complete header/footer restructure
+  - Three-tier header implementation
+  - Responsive navigation with conditional rendering
+  - Professional two-tier footer with optimized mobile layout
+  - Search modal integration for mobile devices
+
+#### **Styling & Visual Design**
+- **`wwwroot/css/site.css`**: Comprehensive styling system
+  - Sticky navigation with scroll effects
+  - Responsive grid layouts for footer
+  - Advanced hover animations and transitions
+  - Mobile-first responsive design patterns
+
+#### **Key CSS Classes Added**
+```css
+.welcome-bar                 /* Top header row styling */
+.main-header                 /* Middle header row layout */
+.sticky-navigation           /* Sticky navigation container */
+.main-footer                 /* Professional footer styling */
+.bottom-footer               /* Copyright and credits section */
+.footer-link                 /* Interactive footer links */
+.contact-info               /* Contact information layout */
+```
+
+#### **Responsive Design Features**
+```css
+/* Mobile navigation enhancements */
+.sticky-navigation .navbar-brand     /* Mobile logo display */
+.btn-outline-primary                 /* Search button styling */
+
+/* Footer responsive grid */
+.main-footer .col-4                  /* Three-column mobile layout */
+.footer-brand                        /* Brand section responsive behavior */
+```
+
+#### **Interactive Elements**
+- **Scroll Detection**: JavaScript implementation for dynamic navigation styling
+- **Modal Search**: Bootstrap modal for mobile search functionality
+- **Hover Effects**: CSS animations for professional link interactions
+- **Responsive Images**: Optimized icon sizing across devices
+
 ### 🔄 Advanced Data Management
 - **Repository Pattern**: Clean data access layer with generic repositories
 - **Unit of Work**: Centralized transaction management and data consistency
