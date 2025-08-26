@@ -1,9 +1,11 @@
 using Bulk.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bulk.DataAccess.Data
 {
-    public class BulkDbContext : DbContext
+    public class BulkDbContext : IdentityDbContext<IdentityUser>
     {
         public BulkDbContext(DbContextOptions<BulkDbContext> options) : base(options)
         {
@@ -14,6 +16,7 @@ namespace Bulk.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Category)
                 .WithMany()
